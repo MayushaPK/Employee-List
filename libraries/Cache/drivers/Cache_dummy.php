@@ -32,13 +32,13 @@
  * @copyright	Copyright (c) 2014 - 2019, British Columbia Institute of Technology (https://bcit.ca/)
  * @license	https://opensource.org/licenses/MIT	MIT License
  * @link	https://codeigniter.com
- * @since	Version 2.0.0
+ * @since	Version 2.0
  * @filesource
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**
- * CodeIgniter APC Caching Class
+ * CodeIgniter Dummy Caching Class
  *
  * @package		CodeIgniter
  * @subpackage	Libraries
@@ -46,41 +46,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * @author		EllisLab Dev Team
  * @link
  */
-class CI_Cache_apc extends CI_Driver {
-
-	/**
-	 * Class constructor
-	 *
-	 * Only present so that an error message is logged
-	 * if APC is not available.
-	 *
-	 * @return	void
-	 */
-	public function __construct()
-	{
-		if ( ! $this->is_supported())
-		{
-			log_message('error', 'Cache: Failed to initialize APC; extension not loaded/enabled?');
-		}
-	}
-
-	// ------------------------------------------------------------------------
+class CI_Cache_dummy extends CI_Driver {
 
 	/**
 	 * Get
 	 *
-	 * Look for a value in the cache. If it exists, return the data
-	 * if not, return FALSE
+	 * Since this is the dummy class, it's always going to return FALSE.
 	 *
 	 * @param	string
-	 * @return	mixed	value that is stored/FALSE on failure
+	 * @return	bool	FALSE
 	 */
 	public function get($id)
 	{
-		$success = FALSE;
-		$data = apc_fetch($id, $success);
-
-		return ($success === TRUE) ? $data : FALSE;
+		return FALSE;
 	}
 
 	// ------------------------------------------------------------------------
@@ -88,15 +66,15 @@ class CI_Cache_apc extends CI_Driver {
 	/**
 	 * Cache Save
 	 *
-	 * @param	string	$id	Cache ID
-	 * @param	mixed	$data	Data to store
-	 * @param	int	$ttl	Length of time (in seconds) to cache the data
-	 * @param	bool	$raw	Whether to store the raw value (unused)
-	 * @return	bool	TRUE on success, FALSE on failure
+	 * @param	string	Unique Key
+	 * @param	mixed	Data to store
+	 * @param	int	Length of time (in seconds) to cache the data
+	 * @param	bool	Whether to store the raw value
+	 * @return	bool	TRUE, Simulating success
 	 */
 	public function save($id, $data, $ttl = 60, $raw = FALSE)
 	{
-		return apc_store($id, $data, (int) $ttl);
+		return TRUE;
 	}
 
 	// ------------------------------------------------------------------------
@@ -105,11 +83,11 @@ class CI_Cache_apc extends CI_Driver {
 	 * Delete from Cache
 	 *
 	 * @param	mixed	unique identifier of the item in the cache
-	 * @return	bool	true on success/false on failure
+	 * @return	bool	TRUE, simulating success
 	 */
 	public function delete($id)
 	{
-		return apc_delete($id);
+		return TRUE;
 	}
 
 	// ------------------------------------------------------------------------
@@ -123,7 +101,7 @@ class CI_Cache_apc extends CI_Driver {
 	 */
 	public function increment($id, $offset = 1)
 	{
-		return apc_inc($id, $offset);
+		return TRUE;
 	}
 
 	// ------------------------------------------------------------------------
@@ -137,7 +115,7 @@ class CI_Cache_apc extends CI_Driver {
 	 */
 	public function decrement($id, $offset = 1)
 	{
-		return apc_dec($id, $offset);
+		return TRUE;
 	}
 
 	// ------------------------------------------------------------------------
@@ -145,11 +123,11 @@ class CI_Cache_apc extends CI_Driver {
 	/**
 	 * Clean the cache
 	 *
-	 * @return	bool	false on failure/true on success
+	 * @return	bool	TRUE, simulating success
 	 */
 	public function clean()
 	{
-		return apc_clear_cache('user');
+		return TRUE;
 	}
 
 	// ------------------------------------------------------------------------
@@ -158,11 +136,11 @@ class CI_Cache_apc extends CI_Driver {
 	 * Cache Info
 	 *
 	 * @param	string	user/filehits
-	 * @return	mixed	array on success, false on failure
+	 * @return	bool	FALSE
 	 */
 	 public function cache_info($type = NULL)
 	 {
-		 return apc_cache_info($type);
+		 return FALSE;
 	 }
 
 	// ------------------------------------------------------------------------
@@ -171,47 +149,24 @@ class CI_Cache_apc extends CI_Driver {
 	 * Get Cache Metadata
 	 *
 	 * @param	mixed	key to get cache metadata on
-	 * @return	mixed	array on success/false on failure
+	 * @return	bool	FALSE
 	 */
 	public function get_metadata($id)
 	{
-		$cache_info = apc_cache_info('user', FALSE);
-		if (empty($cache_info) OR empty($cache_info['cache_list']))
-		{
-			return FALSE;
-		}
-
-		foreach ($cache_info['cache_list'] as &$entry)
-		{
-			if ($entry['info'] !== $id)
-			{
-				continue;
-			}
-
-			$success  = FALSE;
-			$metadata = array(
-				'expire' => ($entry['ttl'] ? $entry['mtime'] + $entry['ttl'] : 0),
-				'mtime'  => $entry['ttl'],
-				'data'   => apc_fetch($id, $success)
-			);
-
-			return ($success === TRUE) ? $metadata : FALSE;
-		}
-
 		return FALSE;
 	}
 
 	// ------------------------------------------------------------------------
 
 	/**
-	 * is_supported()
+	 * Is this caching driver supported on the system?
+	 * Of course this one is.
 	 *
-	 * Check to see if APC is available on this system, bail if it isn't.
-	 *
-	 * @return	bool
+	 * @return	bool	TRUE
 	 */
 	public function is_supported()
 	{
-		return (extension_loaded('apc') && ini_get('apc.enabled'));
+		return TRUE;
 	}
+
 }
