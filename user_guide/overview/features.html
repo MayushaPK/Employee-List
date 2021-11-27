@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>CodeIgniter Overview &mdash; CodeIgniter 3.1.11 documentation</title>
+  <title>CodeIgniter Features &mdash; CodeIgniter 3.1.11 documentation</title>
   
 
   
@@ -34,8 +34,9 @@
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="CodeIgniter 3.1.11 documentation" href="../index.html"/>
-        <link rel="next" title="Getting Started With CodeIgniter" href="getting_started.html"/>
-        <link rel="prev" title="Troubleshooting" href="../installation/troubleshooting.html"/> 
+        <link rel="up" title="CodeIgniter Overview" href="index.html"/>
+        <link rel="next" title="Application Flow Chart" href="appflow.html"/>
+        <link rel="prev" title="CodeIgniter at a Glance" href="at_a_glance.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -63,10 +64,10 @@
 </li>
 </ul>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">CodeIgniter Overview</a><ul>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">CodeIgniter Overview</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="at_a_glance.html">CodeIgniter at a Glance</a></li>
-<li class="toctree-l2"><a class="reference internal" href="features.html">Supported Features</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Supported Features</a></li>
 <li class="toctree-l2"><a class="reference internal" href="appflow.html">Application Flow Chart</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mvc.html">Model-View-Controller</a></li>
 <li class="toctree-l2"><a class="reference internal" href="goals.html">Architectural Goals</a></li>
@@ -247,10 +248,10 @@
 </li>
 </ul>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">CodeIgniter Overview</a><ul>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">CodeIgniter Overview</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="at_a_glance.html">CodeIgniter at a Glance</a></li>
-<li class="toctree-l2"><a class="reference internal" href="features.html">Supported Features</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Supported Features</a></li>
 <li class="toctree-l2"><a class="reference internal" href="appflow.html">Application Flow Chart</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mvc.html">Model-View-Controller</a></li>
 <li class="toctree-l2"><a class="reference internal" href="goals.html">Architectural Goals</a></li>
@@ -407,7 +408,9 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
-    <li>CodeIgniter Overview</li>
+        <li><a href="index.html">CodeIgniter Overview</a> &raquo;</li>
+      
+    <li>CodeIgniter Features</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -419,19 +422,50 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="codeigniter-overview">
-<h1>CodeIgniter Overview<a class="headerlink" href="#codeigniter-overview" title="Permalink to this headline">¶</a></h1>
-<p>The following pages describe the broad concepts behind CodeIgniter:</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="at_a_glance.html">CodeIgniter at a Glance</a></li>
-<li class="toctree-l1"><a class="reference internal" href="features.html">Supported Features</a></li>
-<li class="toctree-l1"><a class="reference internal" href="appflow.html">Application Flow Chart</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mvc.html">Model-View-Controller</a></li>
-<li class="toctree-l1"><a class="reference internal" href="goals.html">Architectural Goals</a></li>
+  <div class="section" id="codeigniter-features">
+<h1>CodeIgniter Features<a class="headerlink" href="#codeigniter-features" title="Permalink to this headline">¶</a></h1>
+<p>Features in and of themselves are a very poor way to judge an
+application since they tell you nothing about the user experience, or
+how intuitively or intelligently it is designed. Features don’t reveal
+anything about the quality of the code, or the performance, or the
+attention to detail, or security practices. The only way to really judge
+an app is to try it and get to know the code.
+<a class="reference internal" href="../installation/index.html"><span class="doc">Installing</span></a> CodeIgniter is child’s play so
+we encourage you to do just that. In the mean time here’s a list of
+CodeIgniter’s main features.</p>
+<ul class="simple">
+<li>Model-View-Controller Based System</li>
+<li>Extremely Light Weight</li>
+<li>Full Featured database classes with support for several platforms.</li>
+<li>Query Builder Database Support</li>
+<li>Form and Data Validation</li>
+<li>Security and XSS Filtering</li>
+<li>Session Management</li>
+<li>Email Sending Class. Supports Attachments, HTML/Text email, multiple
+protocols (sendmail, SMTP, and Mail) and more.</li>
+<li>Image Manipulation Library (cropping, resizing, rotating, etc.).
+Supports GD, ImageMagick, and NetPBM</li>
+<li>File Uploading Class</li>
+<li>FTP Class</li>
+<li>Localization</li>
+<li>Pagination</li>
+<li>Data Encryption</li>
+<li>Benchmarking</li>
+<li>Full Page Caching</li>
+<li>Error Logging</li>
+<li>Application Profiling</li>
+<li>Calendaring Class</li>
+<li>User Agent Class</li>
+<li>Zip Encoding Class</li>
+<li>Template Engine Class</li>
+<li>Trackback Class</li>
+<li>XML-RPC Library</li>
+<li>Unit Testing Class</li>
+<li>Search-engine Friendly URLs</li>
+<li>Flexible URI Routing</li>
+<li>Support for Hooks and Class Extensions</li>
+<li>Large library of “helper” functions</li>
 </ul>
-</div>
 </div>
 
 
@@ -440,10 +474,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="getting_started.html" class="btn btn-neutral float-right" title="Getting Started With CodeIgniter">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="appflow.html" class="btn btn-neutral float-right" title="Application Flow Chart">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../installation/troubleshooting.html" class="btn btn-neutral" title="Troubleshooting"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="at_a_glance.html" class="btn btn-neutral" title="CodeIgniter at a Glance"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>CodeIgniter Overview &mdash; CodeIgniter 3.1.11 documentation</title>
+  <title>Application Flow Chart &mdash; CodeIgniter 3.1.11 documentation</title>
   
 
   
@@ -34,8 +34,9 @@
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="CodeIgniter 3.1.11 documentation" href="../index.html"/>
-        <link rel="next" title="Getting Started With CodeIgniter" href="getting_started.html"/>
-        <link rel="prev" title="Troubleshooting" href="../installation/troubleshooting.html"/> 
+        <link rel="up" title="CodeIgniter Overview" href="index.html"/>
+        <link rel="next" title="Model-View-Controller" href="mvc.html"/>
+        <link rel="prev" title="CodeIgniter Features" href="features.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -63,11 +64,11 @@
 </li>
 </ul>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">CodeIgniter Overview</a><ul>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">CodeIgniter Overview</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="at_a_glance.html">CodeIgniter at a Glance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="features.html">Supported Features</a></li>
-<li class="toctree-l2"><a class="reference internal" href="appflow.html">Application Flow Chart</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Application Flow Chart</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mvc.html">Model-View-Controller</a></li>
 <li class="toctree-l2"><a class="reference internal" href="goals.html">Architectural Goals</a></li>
 </ul>
@@ -247,11 +248,11 @@
 </li>
 </ul>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">CodeIgniter Overview</a><ul>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">CodeIgniter Overview</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="at_a_glance.html">CodeIgniter at a Glance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="features.html">Supported Features</a></li>
-<li class="toctree-l2"><a class="reference internal" href="appflow.html">Application Flow Chart</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Application Flow Chart</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mvc.html">Model-View-Controller</a></li>
 <li class="toctree-l2"><a class="reference internal" href="goals.html">Architectural Goals</a></li>
 </ul>
@@ -407,7 +408,9 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
-    <li>CodeIgniter Overview</li>
+        <li><a href="index.html">CodeIgniter Overview</a> &raquo;</li>
+      
+    <li>Application Flow Chart</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -419,19 +422,25 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="codeigniter-overview">
-<h1>CodeIgniter Overview<a class="headerlink" href="#codeigniter-overview" title="Permalink to this headline">¶</a></h1>
-<p>The following pages describe the broad concepts behind CodeIgniter:</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="at_a_glance.html">CodeIgniter at a Glance</a></li>
-<li class="toctree-l1"><a class="reference internal" href="features.html">Supported Features</a></li>
-<li class="toctree-l1"><a class="reference internal" href="appflow.html">Application Flow Chart</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mvc.html">Model-View-Controller</a></li>
-<li class="toctree-l1"><a class="reference internal" href="goals.html">Architectural Goals</a></li>
-</ul>
-</div>
+  <div class="section" id="application-flow-chart">
+<h1>Application Flow Chart<a class="headerlink" href="#application-flow-chart" title="Permalink to this headline">¶</a></h1>
+<p>The following graphic illustrates how data flows throughout the system:</p>
+<p><img alt="CodeIgniter application flow" src="../_images/appflowchart.gif" /></p>
+<ol class="arabic simple">
+<li>The index.php serves as the front controller, initializing the base
+resources needed to run CodeIgniter.</li>
+<li>The Router examines the HTTP request to determine what should be done
+with it.</li>
+<li>If a cache file exists, it is sent directly to the browser, bypassing
+the normal system execution.</li>
+<li>Security. Before the application controller is loaded, the HTTP
+request and any user submitted data is filtered for security.</li>
+<li>The Controller loads the model, core libraries, helpers, and any
+other resources needed to process the specific request.</li>
+<li>The finalized View is rendered then sent to the web browser to be
+seen. If caching is enabled, the view is cached first so that on
+subsequent requests it can be served.</li>
+</ol>
 </div>
 
 
@@ -440,10 +449,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="getting_started.html" class="btn btn-neutral float-right" title="Getting Started With CodeIgniter">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="mvc.html" class="btn btn-neutral float-right" title="Model-View-Controller">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../installation/troubleshooting.html" class="btn btn-neutral" title="Troubleshooting"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="features.html" class="btn btn-neutral" title="CodeIgniter Features"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

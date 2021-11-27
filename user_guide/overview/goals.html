@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>CodeIgniter Overview &mdash; CodeIgniter 3.1.11 documentation</title>
+  <title>Design and Architectural Goals &mdash; CodeIgniter 3.1.11 documentation</title>
   
 
   
@@ -34,8 +34,9 @@
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="CodeIgniter 3.1.11 documentation" href="../index.html"/>
-        <link rel="next" title="Getting Started With CodeIgniter" href="getting_started.html"/>
-        <link rel="prev" title="Troubleshooting" href="../installation/troubleshooting.html"/> 
+        <link rel="up" title="CodeIgniter Overview" href="index.html"/>
+        <link rel="next" title="Tutorial" href="../tutorial/index.html"/>
+        <link rel="prev" title="Model-View-Controller" href="mvc.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -63,13 +64,13 @@
 </li>
 </ul>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">CodeIgniter Overview</a><ul>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">CodeIgniter Overview</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="at_a_glance.html">CodeIgniter at a Glance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="features.html">Supported Features</a></li>
 <li class="toctree-l2"><a class="reference internal" href="appflow.html">Application Flow Chart</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mvc.html">Model-View-Controller</a></li>
-<li class="toctree-l2"><a class="reference internal" href="goals.html">Architectural Goals</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Architectural Goals</a></li>
 </ul>
 </li>
 </ul>
@@ -247,13 +248,13 @@
 </li>
 </ul>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">CodeIgniter Overview</a><ul>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">CodeIgniter Overview</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="at_a_glance.html">CodeIgniter at a Glance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="features.html">Supported Features</a></li>
 <li class="toctree-l2"><a class="reference internal" href="appflow.html">Application Flow Chart</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mvc.html">Model-View-Controller</a></li>
-<li class="toctree-l2"><a class="reference internal" href="goals.html">Architectural Goals</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Architectural Goals</a></li>
 </ul>
 </li>
 </ul>
@@ -407,7 +408,9 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
-    <li>CodeIgniter Overview</li>
+        <li><a href="index.html">CodeIgniter Overview</a> &raquo;</li>
+      
+    <li>Design and Architectural Goals</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -419,19 +422,34 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="codeigniter-overview">
-<h1>CodeIgniter Overview<a class="headerlink" href="#codeigniter-overview" title="Permalink to this headline">¶</a></h1>
-<p>The following pages describe the broad concepts behind CodeIgniter:</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="at_a_glance.html">CodeIgniter at a Glance</a></li>
-<li class="toctree-l1"><a class="reference internal" href="features.html">Supported Features</a></li>
-<li class="toctree-l1"><a class="reference internal" href="appflow.html">Application Flow Chart</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mvc.html">Model-View-Controller</a></li>
-<li class="toctree-l1"><a class="reference internal" href="goals.html">Architectural Goals</a></li>
+  <div class="section" id="design-and-architectural-goals">
+<h1>Design and Architectural Goals<a class="headerlink" href="#design-and-architectural-goals" title="Permalink to this headline">¶</a></h1>
+<p>Our goal for CodeIgniter is maximum performance, capability, and
+flexibility in the smallest, lightest possible package.</p>
+<p>To meet this goal we are committed to benchmarking, re-factoring, and
+simplifying at every step of the development process, rejecting anything
+that doesn’t further the stated objective.</p>
+<p>From a technical and architectural standpoint, CodeIgniter was created
+with the following objectives:</p>
+<ul class="simple">
+<li><strong>Dynamic Instantiation.</strong> In CodeIgniter, components are loaded and
+routines executed only when requested, rather than globally. No
+assumptions are made by the system regarding what may be needed
+beyond the minimal core resources, so the system is very light-weight
+by default. The events, as triggered by the HTTP request, and the
+controllers and views you design will determine what is invoked.</li>
+<li><strong>Loose Coupling.</strong> Coupling is the degree to which components of a
+system rely on each other. The less components depend on each other
+the more reusable and flexible the system becomes. Our goal was a
+very loosely coupled system.</li>
+<li><strong>Component Singularity.</strong> Singularity is the degree to which
+components have a narrowly focused purpose. In CodeIgniter, each
+class and its functions are highly autonomous in order to allow
+maximum usefulness.</li>
 </ul>
-</div>
+<p>CodeIgniter is a dynamically instantiated, loosely coupled system with
+high component singularity. It strives for simplicity, flexibility, and
+high performance in a small footprint package.</p>
 </div>
 
 
@@ -440,10 +458,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="getting_started.html" class="btn btn-neutral float-right" title="Getting Started With CodeIgniter">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../tutorial/index.html" class="btn btn-neutral float-right" title="Tutorial">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../installation/troubleshooting.html" class="btn btn-neutral" title="Troubleshooting"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="mvc.html" class="btn btn-neutral" title="Model-View-Controller"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
