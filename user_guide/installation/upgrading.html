@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Installation Instructions &mdash; CodeIgniter 3.1.11 documentation</title>
+  <title>Upgrading From a Previous Version &mdash; CodeIgniter 3.1.11 documentation</title>
   
 
   
@@ -34,8 +34,9 @@
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="CodeIgniter 3.1.11 documentation" href="../index.html"/>
-        <link rel="next" title="Downloading CodeIgniter" href="downloads.html"/>
-        <link rel="prev" title="Welcome to CodeIgniter" href="../general/welcome.html"/> 
+        <link rel="up" title="Installation Instructions" href="index.html"/>
+        <link rel="next" title="Upgrading from 3.1.10 to 3.1.11" href="upgrade_3111.html"/>
+        <link rel="prev" title="Downloading CodeIgniter" href="downloads.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -54,10 +55,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">Welcome to CodeIgniter</a></li>
 </ul>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation Instructions</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Installation Instructions</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="downloads.html">Downloading CodeIgniter</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Installation Instructions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrading.html">Upgrading From a Previous Version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html">Installation Instructions</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Upgrading From a Previous Version</a></li>
 <li class="toctree-l2"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
 </ul>
 </li>
@@ -238,10 +239,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">Welcome to CodeIgniter</a></li>
 </ul>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation Instructions</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Installation Instructions</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="downloads.html">Downloading CodeIgniter</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Installation Instructions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrading.html">Upgrading From a Previous Version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html">Installation Instructions</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Upgrading From a Previous Version</a></li>
 <li class="toctree-l2"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
 </ul>
 </li>
@@ -407,7 +408,9 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
-    <li>Installation Instructions</li>
+        <li><a href="index.html">Installation Instructions</a> &raquo;</li>
+      
+    <li>Upgrading From a Previous Version</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -419,46 +422,64 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="installation-instructions">
-<h1>Installation Instructions<a class="headerlink" href="#installation-instructions" title="Permalink to this headline">¶</a></h1>
-<p>CodeIgniter is installed in four steps:</p>
-<ol class="arabic simple">
-<li>Unzip the package.</li>
-<li>Upload the CodeIgniter folders and files to your server. Normally the
-<em>index.php</em> file will be at your root.</li>
-<li>Open the <em>application/config/config.php</em> file with a text editor and
-set your base URL. If you intend to use encryption or sessions, set
-your encryption key.</li>
-<li>If you intend to use a database, open the
-<em>application/config/database.php</em> file with a text editor and set your
-database settings.</li>
-</ol>
-<p>If you wish to increase security by hiding the location of your
-CodeIgniter files you can rename the system and application folders to
-something more private. If you do rename them, you must open your main
-<em>index.php</em> file and set the <code class="docutils literal"><span class="pre">$system_path</span></code> and <code class="docutils literal"><span class="pre">$application_folder</span></code>
-variables at the top of the file with the new name you’ve chosen.</p>
-<p>For the best security, both the system and any application folders
-should be placed above web root so that they are not directly accessible
-via a browser. By default, <em>.htaccess</em> files are included in each folder
-to help prevent direct access, but it is best to remove them from public
-access entirely in case the web server configuration changes or doesn’t
-abide by the <em>.htaccess</em>.</p>
-<p>If you would like to keep your views public it is also possible to move
-the views folder out of your application folder.</p>
-<p>After moving them, open your main index.php file and set the
-<code class="docutils literal"><span class="pre">$system_path</span></code>, <code class="docutils literal"><span class="pre">$application_folder</span></code> and <code class="docutils literal"><span class="pre">$view_folder</span></code> variables,
-preferably with a full path, e.g. ‘<em>/www/MyUser/system</em>’.</p>
-<p>One additional measure to take in production environments is to disable
-PHP error reporting and any other development-only functionality. In
-CodeIgniter, this can be done by setting the <code class="docutils literal"><span class="pre">ENVIRONMENT</span></code> constant, which
-is more fully described on the <a class="reference internal" href="../general/security.html"><span class="doc">security
-page</span></a>.</p>
-<p>That’s it!</p>
-<p>If you’re new to CodeIgniter, please read the <a class="reference internal" href="../overview/getting_started.html"><span class="doc">Getting
-Started</span></a> section of the User Guide
-to begin learning how to build dynamic PHP applications. Enjoy!</p>
+  <div class="section" id="upgrading-from-a-previous-version">
+<h1>Upgrading From a Previous Version<a class="headerlink" href="#upgrading-from-a-previous-version" title="Permalink to this headline">¶</a></h1>
+<p>Please read the upgrade notes corresponding to the version you are
+upgrading from.</p>
 <div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_3111.html">Upgrading from 3.1.10 to 3.1.11</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_3110.html">Upgrading from 3.1.9 to 3.1.10</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_319.html">Upgrading from 3.1.8 to 3.1.9</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_318.html">Upgrading from 3.1.7 to 3.1.8</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_317.html">Upgrading from 3.1.6 to 3.1.7</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_316.html">Upgrading from 3.1.5 to 3.1.6</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_315.html">Upgrading from 3.1.4 to 3.1.5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_314.html">Upgrading from 3.1.3 to 3.1.4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_313.html">Upgrading from 3.1.2 to 3.1.3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_312.html">Upgrading from 3.1.1 to 3.1.2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_311.html">Upgrading from 3.1.0 to 3.1.1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_310.html">Upgrading from 3.0.6 to 3.1.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_306.html">Upgrading from 3.0.5 to 3.0.6</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_305.html">Upgrading from 3.0.4 to 3.0.5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_304.html">Upgrading from 3.0.3 to 3.0.4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_303.html">Upgrading from 3.0.2 to 3.0.3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_302.html">Upgrading from 3.0.1 to 3.0.2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_301.html">Upgrading from 3.0.0 to 3.0.1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_300.html">Upgrading from 2.2.x to 3.0.x</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_223.html">Upgrading from 2.2.2 to 2.2.3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_222.html">Upgrading from 2.2.1 to 2.2.2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_221.html">Upgrading from 2.2.0 to 2.2.1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_220.html">Upgrading from 2.1.4 to 2.2.x</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_214.html">Upgrading from 2.1.3 to 2.1.4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_213.html">Upgrading from 2.1.2 to 2.1.3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_212.html">Upgrading from 2.1.1 to 2.1.2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_211.html">Upgrading from 2.1.0 to 2.1.1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_210.html">Upgrading from 2.0.3 to 2.1.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_203.html">Upgrading from 2.0.2 to 2.0.3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_202.html">Upgrading from 2.0.1 to 2.0.2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_201.html">Upgrading from 2.0 to 2.0.1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_200.html">Upgrading from 1.7.2 to 2.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_172.html">Upgrading from 1.7.1 to 1.7.2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_171.html">Upgrading from 1.7.0 to 1.7.1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_170.html">Upgrading from 1.6.3 to 1.7.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_163.html">Upgrading from 1.6.2 to 1.6.3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_162.html">Upgrading from 1.6.1 to 1.6.2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_161.html">Upgrading from 1.6.0 to 1.6.1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_160.html">Upgrading from 1.5.4 to 1.6.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_154.html">Upgrading from 1.5.3 to 1.5.4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_153.html">Upgrading from 1.5.2 to 1.5.3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_152.html">Upgrading from 1.5.0 or 1.5.1 to 1.5.2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_150.html">Upgrading from 1.4.1 to 1.5.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_141.html">Upgrading from 1.4.0 to 1.4.1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_140.html">Upgrading from 1.3.3 to 1.4.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_133.html">Upgrading from 1.3.2 to 1.3.3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_132.html">Upgrading from 1.3.1 to 1.3.2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_131.html">Upgrading from 1.3 to 1.3.1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_130.html">Upgrading from 1.2 to 1.3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_120.html">Upgrading from 1.1 to 1.2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_b11.html">Upgrading from Beta 1.0 to Beta 1.1</a></li>
+</ul>
 </div>
 </div>
 
@@ -468,10 +489,10 @@ to begin learning how to build dynamic PHP applications. Enjoy!</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="downloads.html" class="btn btn-neutral float-right" title="Downloading CodeIgniter">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="upgrade_3111.html" class="btn btn-neutral float-right" title="Upgrading from 3.1.10 to 3.1.11">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../general/welcome.html" class="btn btn-neutral" title="Welcome to CodeIgniter"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="downloads.html" class="btn btn-neutral" title="Downloading CodeIgniter"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
